@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import Error from "./Error";
 
-function Pregunta() {
+function Pregunta({ setPresupuesto, setRestante }) {
   const [cantidad, setCantidad] = useState(0);
   const [error, setError] = useState(false);
 
@@ -13,13 +14,15 @@ function Pregunta() {
     }
 
     setError(false);
+    setPresupuesto(cantidad);
+    setRestante(cantidad);
   };
 
   return (
     <>
       <h2>Coloca tu presupuesto</h2>
 
-      {error ? <p>Que pedo puto</p> : null}
+      {error ? <Error mensaje="El presupuesto es incorrecto" /> : null}
 
       <form>
         <input
