@@ -2,15 +2,24 @@ import React, { useState } from "react";
 
 function Pregunta() {
   const [cantidad, setCantidad] = useState(0);
+  const [error, setError] = useState(false);
 
   const handleClick = (e) => {
     e.preventDefault();
-    console.log(cantidad);
+
+    if (cantidad < 1 || isNaN(cantidad)) {
+      setError(true);
+      return;
+    }
+
+    setError(false);
   };
 
   return (
     <>
       <h2>Coloca tu presupuesto</h2>
+
+      {error ? <p>Que pedo puto</p> : null}
 
       <form>
         <input
