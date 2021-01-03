@@ -1,4 +1,5 @@
 import { revisarPresupuesto } from "../helpers/helpers";
+import PropTypes from "prop-types";
 
 function ControlPresupuesto({ presupuesto, restante }) {
   return (
@@ -10,5 +11,10 @@ function ControlPresupuesto({ presupuesto, restante }) {
     </>
   );
 }
+
+ControlPresupuesto.propTypes = {
+  presupuesto: PropTypes.number.isRequired,
+  restante: PropTypes.number.isRequired,
+};
 
 export default ControlPresupuesto;

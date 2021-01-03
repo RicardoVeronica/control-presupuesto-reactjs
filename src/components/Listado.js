@@ -1,4 +1,5 @@
 import Gasto from "./Gasto";
+import PropTypes from "prop-types";
 
 function Listado({ gastos }) {
   return (
@@ -10,5 +11,9 @@ function Listado({ gastos }) {
     </div>
   );
 }
+
+Listado.propTypes = {
+  gastos: PropTypes.array.isRequired,
+};
 
 export default Listado;
