@@ -6,7 +6,6 @@ function Formulario({ agregarNuevoGasto }) {
   const [nombre, setNombre] = useState("");
   const [cantidad, setCantidad] = useState(0);
   const [error, setError] = useState(false);
-  const [gastos, setGastos] = useState([]);
 
   const handleClick = (e) => {
     e.preventDefault();
