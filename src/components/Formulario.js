@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import Error from "../components/Error";
 import shortid from "shortid";
 
-function Formulario() {
+function Formulario({ agregarNuevoGasto }) {
   const [nombre, setNombre] = useState("");
   const [cantidad, setCantidad] = useState(0);
   const [error, setError] = useState(false);
+  const [gastos, setGastos] = useState([]);
 
   const handleClick = (e) => {
     e.preventDefault();
@@ -22,7 +23,9 @@ function Formulario() {
       id: shortid.generate(),
     };
 
-    console.log(gasto);
+    agregarNuevoGasto(gasto);
+    setNombre("");
+    setCantidad(0);
   };
 
   return (
